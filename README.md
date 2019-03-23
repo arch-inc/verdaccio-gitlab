@@ -17,6 +17,8 @@ the following:
 
 > This is experimental!
 
+> This is **a private fork** with a `docker-compose.yml` that runs Verdaccio with GitLab authentication plugin, connecting to an external GitLab instance. See the **Docker** section for more details.
+
 ## Gitlab Version Compatibility
 
 - If `legacy_mode: false` or undefined (default mode): Gitlab 11.2+
@@ -190,13 +192,15 @@ so each user will actually be logged in multiple times.
 ## Docker
 
 ```sh
-git clone https://github.com/bufferoverflow/verdaccio-gitlab.git
+git clone https://github.com/arch-inc/verdaccio-gitlab.git
 cd verdaccio-gitlab
 docker-compose up --build -d
 ```
 
-- login with user `root` and password `verdaccio` on Gitlab via [http://localhost:50080](http://localhost:50080)
-- create a Personal Access Token
+- Before `docker-compose up`, do the following:
+  - create `.env` in the `verdaccio-gitlab` root directory with a single line `GITLAB_HOST=your.gitlab.instance.com`
+  - optionally edit `conf/docker.yaml` to use custom `auth.gitlab.url`
+- create a Personal Access Token in your GitLab instance
 - login to the npm registry [http://localhost:4873](http://localhost:4873) via browser
 - publish your packages via command line
 
