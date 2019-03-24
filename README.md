@@ -17,7 +17,7 @@ the following:
 
 > This is experimental!
 
-> This is **a private fork** with a `docker-compose.yml` that runs Verdaccio with GitLab authentication plugin, connecting to an external GitLab instance. See the **Docker** section for more details.
+> This is **a private fork** with a `docker-compose.yml` that runs Verdaccio with GitLab authentication plugin, connecting to an external GitLab instance. See the [**Docker**](https://github.com/arch-inc/verdaccio-gitlab#docker) section for more details.
 
 ## Gitlab Version Compatibility
 
@@ -197,7 +197,7 @@ cd verdaccio-gitlab
 docker-compose up --build -d
 ```
 
-- Before `docker-compose up`, do the following:
+- before `docker-compose up`, do the following:
   - create `.env` in the `verdaccio-gitlab` root directory with a single line `GITLAB_HOST=your.gitlab.instance.com`
   - optionally edit `conf/docker.yaml` to use custom `auth.gitlab.url`
 - create a Personal Access Token in your GitLab instance
