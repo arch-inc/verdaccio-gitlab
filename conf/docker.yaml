@@ -7,7 +7,7 @@ listen:
 
 auth:
   gitlab:
-    url: https://gitlab:9090
+    url: http://gitlab:9090
     authCache:
       enabled: true
       ttl: 300
